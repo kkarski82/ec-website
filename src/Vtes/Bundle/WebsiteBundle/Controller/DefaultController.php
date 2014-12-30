@@ -8,6 +8,6 @@ class DefaultController extends Controller
 {
     public function indexAction()
     {
-        return $this->render('index.html.twig');
+        return $this->render('VtesWebsiteBundle:Default:index.html.twig');
     }
 }
