@@ -26,7 +26,7 @@ class User implements UserInterface
 
     public function eraseCredentials()
     {
-
+        // not being used
     }
     /* end interface implementation */
 
@@ -52,7 +52,6 @@ class User implements UserInterface
      * @ORM\Column(name="password", type="string", length=64)
      */
     private $password;
-
 
     /**
      * Get id
