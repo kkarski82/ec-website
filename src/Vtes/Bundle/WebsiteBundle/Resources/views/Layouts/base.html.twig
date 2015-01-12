@@ -3,7 +3,11 @@
 <head>
     <meta charset="UTF-8" />
     <title>{% block title %}{% endblock %}</title>
-    {% block stylesheets %}{% endblock %}
+    {% block stylesheets %}
+        {% stylesheets '@VtesWebsiteBundle/Resources/public/css/*' filter='cssrewrite' %}
+            <link rel="stylesheet" href="{{ asset_url }}">
+        {% endstylesheets %}
+    {% endblock %}
 </head>
 <body>
 {% block body %}{% endblock %}

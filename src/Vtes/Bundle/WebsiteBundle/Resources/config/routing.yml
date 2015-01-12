@@ -2,6 +2,12 @@ vtes_website_user:
     resource: "@VtesWebsiteBundle/Resources/config/routing/user.yml"
     prefix:   /user
 
-vtes_website_homepage:
-    path:     /
+vtes_website_index:
+    path: /
     defaults: { _controller: VtesWebsiteBundle:Default:index }
+
+vtes_website_homepage:
+    path: /{_locale}
+    defaults: { _controller: VtesWebsiteBundle:Default:home }
+    requirements:
+        _locale: en|pl

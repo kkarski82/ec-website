@@ -1,3 +1,18 @@
-<nav>
-    This is the navbar.
+<nav id="navbar">
+    <ul>
+        <li>
+            <a href="{{ path('homepage') }}">Home</a>
+        </li>
+        <li>
+            <a href="{{ path('user') }}">User</a>
+        </li>
+    </ul>
+    <ul class="lang-select">
+        <li>
+            <a class="lang" href="{{ path(app.request.get('_route'), app.request.get('_route_params')|merge({'_locale': 'en'})) }}">en</a>
+        </li>
+        <li>
+            <a class="lang" href="{{ path(app.request.get('_route'), app.request.get('_route_params')|merge({'_locale': 'pl'})) }}">pl</a>
+        </li>
+    </ul>
 </nav>

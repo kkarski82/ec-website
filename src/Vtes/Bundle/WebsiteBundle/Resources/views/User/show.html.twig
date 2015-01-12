@@ -1,4 +1,4 @@
-{% extends '::base.html.twig' %}
+{% extends 'VtesWebsiteBundle:Layouts:base.html.twig' %}
 
 {% block body -%}
     <h1>User</h1>
@@ -14,12 +14,8 @@
                 <td>{{ entity.username }}</td>
             </tr>
             <tr>
-                <th>Vekn</th>
+                <th>VEKN</th>
                 <td>{{ entity.vekn }}</td>
-            </tr>
-            <tr>
-                <th>Password</th>
-                <td>{{ entity.password }}</td>
             </tr>
             <tr>
                 <th>Name</th>
