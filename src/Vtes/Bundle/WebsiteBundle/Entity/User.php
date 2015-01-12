@@ -35,9 +35,9 @@ class User implements UserInterface
     private $username;
 
     /**
-     * @var integer
+     * @var string
      *
-     * @ORM\Column(name="vekn", type="integer")
+     * @ORM\Column(name="vekn", type="string", length=7)
      */
     private $vekn;
 
@@ -94,7 +94,7 @@ class User implements UserInterface
     /**
      * Get vekn
      *
-     * @return integer
+     * @return string
      */
     public function getVekn()
     {
@@ -159,7 +159,7 @@ class User implements UserInterface
     /**
      * Set vekn
      *
-     * @param int $vekn
+     * @param string $vekn
      * @return User
      */
     public function setVekn($vekn)

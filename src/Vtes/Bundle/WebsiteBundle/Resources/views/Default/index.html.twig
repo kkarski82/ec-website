@@ -1,9 +1,11 @@
-{% extends 'Layouts/base.html.twig' %}
+{% extends 'VtesWebsiteBundle:Layouts:base.html.twig' %}
 
 {% block body %}
 <div id="content-wrapper">
-    {{ include('Partials/_navbar.html.twig') }}
-    {{ include('Partials/_content.html.twig') }}
-    {{ include('Partials/_footer.html.twig') }}
+    {{ include ('VtesWebsiteBundle:Partials:navbar.html.twig') }}
+    <section id="content">
+        This is the content.
+    </section>
+    {{ include ('VtesWebsiteBundle:Partials:footer.html.twig') }}
 </div>
 {% endblock %}
