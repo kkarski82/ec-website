@@ -4,32 +4,19 @@ namespace Vtes\Bundle\WebsiteBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 /**
  * User
  *
- * @ORM\Table()
+ * @ORM\Table(name="user", uniqueConstraints={@ORM\UniqueConstraint(name="search_idx", columns={"username"})})
  * @ORM\Entity
+ * @UniqueEntity("username")
  */
 class User implements UserInterface
 {
-    /* begin interface implementation */
-    public function getRoles()
-    {
-        return array('ROLE_USER');
-    }
-
-    public function getSalt()
-    {
-        return null;
-    }
-
-    public function eraseCredentials()
-    {
-        // not being used
-    }
-    /* end interface implementation */
-
+    //region attributes
     /**
      * @var integer
      *
@@ -42,9 +29,17 @@ class User implements UserInterface
     /**
      * @var string
      *
-     * @ORM\Column(name="username", type="string", length=30)
+     * @ORM\Column(name="username", type="string", length=255, unique=true)
+     * @Assert\Email()
      */
     private $username;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="vekn", type="integer")
+     */
+    private $vekn;
 
     /**
      * @var string
@@ -53,6 +48,29 @@ class User implements UserInterface
      */
     private $password;
 
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="name", type="string", length=30)
+     */
+    private $name;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="surname", type="string", length=30)
+     */
+    private $surname;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="country", type="string", length=30)
+     */
+    private $country;
+    //endregion
+
+    //region getters
     /**
      * Get id
      *
@@ -63,6 +81,68 @@ class User implements UserInterface
         return $this->id;
     }
 
+    /**
+     * Get username
+     *
+     * @return string
+     */
+    public function getUsername()
+    {
+        return $this->username;
+    }
+
+    /**
+     * Get vekn
+     *
+     * @return integer
+     */
+    public function getVekn()
+    {
+        return $this->vekn;
+    }
+
+    /**
+     * Get password
+     *
+     * @return string
+     */
+    public function getPassword()
+    {
+        return $this->password;
+    }
+
+    /**
+     * Get name
+     *
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * Get surname
+     *
+     * @return string
+     */
+    public function getSurname()
+    {
+        return $this->surname;
+    }
+
+    /**
+     * Get country
+     *
+     * @return string
+     */
+    public function getCountry()
+    {
+        return $this->country;
+    }
+    //endregion
+
+    //region setters
     /**
      * Set username
      *
@@ -77,13 +157,16 @@ class User implements UserInterface
     }
 
     /**
-     * Get username
+     * Set vekn
      *
-     * @return string
+     * @param int $vekn
+     * @return User
      */
-    public function getUsername()
+    public function setVekn($vekn)
     {
-        return $this->username;
+        $this->vekn = $vekn;
+
+        return $this;
     }
 
     /**
@@ -100,12 +183,59 @@ class User implements UserInterface
     }
 
     /**
-     * Get password
+     * Set name
      *
-     * @return string
+     * @param string $name
+     * @return User
      */
-    public function getPassword()
+    public function setName($name)
     {
-        return $this->password;
+        $this->name = $name;
+
+        return $this;
     }
+
+    /**
+     * Set surname
+     *
+     * @param string $surname
+     * @return User
+     */
+    public function setSurname($surname)
+    {
+        $this->surname = $surname;
+
+        return $this;
+    }
+
+    /**
+     * Set country
+     *
+     * @param string $country
+     * @return User
+     */
+    public function setCountry($country)
+    {
+        $this->country = $country;
+
+        return $this;
+    }
+    //endregion
+
+    //region interface implementation
+    public function eraseCredentials()
+    {
+        // not being used
+    }
+
+    public function getRoles()
+    {
+        return array('ROLE_USER');
+    }
+
+    public function getSalt()
+    {
+        return null; // not required, password_hash does that for us
+    }
+    //endregion
 }

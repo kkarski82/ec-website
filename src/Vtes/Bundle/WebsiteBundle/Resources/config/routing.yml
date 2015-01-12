@@ -1,3 +1,7 @@
+vtes_website_user:
+    resource: "@VtesWebsiteBundle/Resources/config/routing/user.yml"
+    prefix:   /user
+
 vtes_website_homepage:
     path:     /
     defaults: { _controller: VtesWebsiteBundle:Default:index }
