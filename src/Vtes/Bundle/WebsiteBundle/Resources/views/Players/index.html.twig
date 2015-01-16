@@ -1,0 +1,30 @@
+{% extends 'VtesWebsiteBundle:Layouts:base.html.twig' %}
+
+{% block body -%}
+    <h1>{{ 'players.list' | trans }}</h1>
+
+    <table class="records_list">
+        <thead>
+        <tr>
+            <th>#</th>
+            <th>VEKN</th>
+            <th>{{ 'players.name' | trans }}</th>
+            <th>{{ 'players.surname' | trans }}</th>
+            <th>{{ 'players.country' | trans }}</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% set i = 1 %}
+        {% for entity in entities %}
+            <tr>
+                <td>{{ i }}</td>
+                <td>{{ entity.vekn }}</td>
+                <td>{{ entity.name }}</td>
+                <td>{{ entity.surname }}</td>
+                <td>{{ entity.country | country }}</td>
+            </tr>
+            {% set i = i + 1 %}
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

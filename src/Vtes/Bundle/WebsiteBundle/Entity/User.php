@@ -37,7 +37,7 @@ class User implements UserInterface
     /**
      * @var string
      *
-     * @ORM\Column(name="vekn", type="string", length=7)
+     * @ORM\Column(name="vekn", type="string", length=7, nullable=true)
      */
     private $vekn;
 
@@ -68,6 +68,20 @@ class User implements UserInterface
      * @ORM\Column(name="country", type="string", length=30)
      */
     private $country;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="roommate", type="string", length=64, nullable=true)
+     */
+    private $roommate;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="shirt", type="string", length=3)
+     */
+    private $shirt;
     //endregion
 
     //region getters
@@ -139,6 +153,26 @@ class User implements UserInterface
     public function getCountry()
     {
         return $this->country;
+    }
+
+    /**
+     * Get roommate
+     *
+     * @return string
+     */
+    public function getRoommate()
+    {
+        return $this->roommate;
+    }
+
+    /**
+     * Get shirt
+     *
+     * @return string
+     */
+    public function getShirt()
+    {
+        return $this->shirt;
     }
     //endregion
 
@@ -217,6 +251,32 @@ class User implements UserInterface
     public function setCountry($country)
     {
         $this->country = $country;
+
+        return $this;
+    }
+
+    /**
+     * Set roommate
+     *
+     * @param string $roommate
+     * @return User
+     */
+    public function setRoommate($roommate)
+    {
+        $this->roommate = $roommate;
+
+        return $this;
+    }
+
+    /**
+     * Set shirt
+     *
+     * @param string $shirt
+     * @return User
+     */
+    public function setShirt($shirt)
+    {
+        $this->shirt = $shirt;
 
         return $this;
     }

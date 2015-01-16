@@ -1,0 +1,29 @@
+# Desc: /
+homepage: /
+
+# Desc: /players/
+players: /players/
+
+# Desc: /user/
+user: /user/
+
+# Desc: /user/create
+user_create: /user/create
+
+# Desc: /user/{id}/delete
+user_delete: '/user/{id}/delete'
+
+# Desc: /user/{id}/edit
+user_edit: '/user/{id}/edit'
+
+# Desc: /user/new
+user_new: /user/new
+
+# Desc: /user/{id}/show
+user_show: '/user/{id}/show'
+
+# Desc: /user/{id}/update
+user_update: '/user/{id}/update'
+
+# Desc: /
+vtes_website_index: /

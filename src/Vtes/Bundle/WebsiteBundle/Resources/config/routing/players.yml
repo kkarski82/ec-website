@@ -1,0 +1,3 @@
+players:
+    path:     /
+    defaults: { _controller: "VtesWebsiteBundle:Players:index" }

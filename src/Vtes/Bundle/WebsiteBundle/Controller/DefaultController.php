@@ -8,17 +8,17 @@ use Symfony\Component\HttpFoundation\RedirectResponse;
 
 class DefaultController extends Controller
 {
+    /**
+     *  Displays the homepage
+     *
+     * @param Request $request
+     *
+     * @return Response The view
+     */
     public function indexAction(Request $request)
     {
         $locale = $request->getLocale();
-        $router = $this->get('router');
-        $url = $router->generate('vtes_website_homepage', array('_locale' => $locale));
 
-        return new RedirectResponse($url);
-    }
-
-    public function homeAction()
-    {
-        return $this->render('VtesWebsiteBundle:Default:index.html.twig');
+        return $this->render('VtesWebsiteBundle:Default:index.html.twig', array('locale' => $locale));
     }
 }

@@ -1,7 +1,7 @@
 {% extends 'VtesWebsiteBundle:Layouts:base.html.twig' %}
 
 {% block body -%}
-    <h1>User</h1>
+    <h1>{{ 'admin.user' | trans }}</h1>
 
     <table class="record_properties">
         <tbody>
@@ -10,7 +10,7 @@
                 <td>{{ entity.id }}</td>
             </tr>
             <tr>
-                <th>Username</th>
+                <th>{{ 'players.email' | trans }}</th>
                 <td>{{ entity.username }}</td>
             </tr>
             <tr>
@@ -18,16 +18,24 @@
                 <td>{{ entity.vekn }}</td>
             </tr>
             <tr>
-                <th>Name</th>
+                <th>{{ 'players.name' | trans }}</th>
                 <td>{{ entity.name }}</td>
             </tr>
             <tr>
-                <th>Surname</th>
+                <th>{{ 'players.surname' | trans }}</th>
                 <td>{{ entity.surname }}</td>
             </tr>
             <tr>
-                <th>Country</th>
-                <td>{{ entity.country }}</td>
+                <th>{{ 'players.country' | trans }}</th>
+                <td>{{ entity.country | country }}</td>
+            </tr>
+            <tr>
+                <th>{{ 'players.shirt' | trans }}</th>
+                <td>{{ entity.shirt }}</td>
+            </tr>
+            <tr>
+                <th>{{ 'players.roommate' | trans }}</th>
+                <td>{{ entity.roommate }}</td>
             </tr>
         </tbody>
     </table>
@@ -35,12 +43,12 @@
         <ul class="record_actions">
     <li>
         <a href="{{ path('user') }}">
-            Back to the list
+            {{ 'admin.back-to-list' | trans }}
         </a>
     </li>
     <li>
         <a href="{{ path('user_edit', { 'id': entity.id }) }}">
-            Edit
+            {{ 'admin.edit' | trans }}
         </a>
     </li>
     <li>{{ form(delete_form) }}</li>

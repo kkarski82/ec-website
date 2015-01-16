@@ -38,11 +38,6 @@ assetic:
         - VtesWebsiteBundle
     filters:
         cssrewrite: ~
-        lessphp:
-            apply_to: "\.less$"
-            # Formatter options: compressed, lessjs, classic
-            formatter: "compressed"
-            preserve_comments: false
 
 # Doctrine Configuration
 doctrine:
@@ -54,12 +49,6 @@ doctrine:
         user:     "%database_user%"
         password: "%database_password%"
         charset:  UTF8
-        # if using pdo_sqlite as your database driver:
-        #   1. add the path in parameters.yml
-        #     e.g. database_path: "%kernel.root_dir%/data/data.db3"
-        #   2. Uncomment database_path in parameters.yml.dist
-        #   3. Uncomment next line:
-        #     path:     "%database_path%"
 
     orm:
         auto_generate_proxy_classes: "%kernel.debug%"
@@ -72,3 +61,9 @@ swiftmailer:
     username:  "%mailer_user%"
     password:  "%mailer_password%"
     spool:     { type: memory }
+
+# Translations Configuration
+jms_i18n_routing:
+    default_locale: en
+    locales: [en, pl]
+    strategy: prefix_except_default

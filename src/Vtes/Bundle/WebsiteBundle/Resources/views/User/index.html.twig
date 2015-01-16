@@ -1,18 +1,20 @@
 {% extends 'VtesWebsiteBundle:Layouts:base.html.twig' %}
 
 {% block body -%}
-    <h1>User list</h1>
+    <h1>{{ 'admin.user-list' | trans }}</h1>
 
     <table class="records_list">
         <thead>
             <tr>
                 <th>Id</th>
-                <th>Username</th>
+                <th>{{ 'players.email' | trans }}</th>
                 <th>VEKN</th>
-                <th>Name</th>
-                <th>Surname</th>
-                <th>Country</th>
-                <th>Actions</th>
+                <th>{{ 'players.name' | trans }}</th>
+                <th>{{ 'players.surname' | trans }}</th>
+                <th>{{ 'players.country' | trans }}</th>
+                <th>{{ 'players.shirt' | trans }}</th>
+                <th>{{ 'players.roommate' | trans }}</th>
+                <th>{{ 'admin.actions' | trans }}</th>
             </tr>
         </thead>
         <tbody>
@@ -23,14 +25,16 @@
                 <td>{{ entity.vekn }}</td>
                 <td>{{ entity.name }}</td>
                 <td>{{ entity.surname }}</td>
-                <td>{{ entity.country }}</td>
+                <td>{{ entity.country | country }}</td>
+                <td>{{ entity.shirt }}</td>
+                <td>{{ entity.roommate }}</td>
                 <td>
                 <ul>
                     <li>
-                        <a href="{{ path('user_show', { 'id': entity.id }) }}">show</a>
+                        <a href="{{ path('user_show', { 'id': entity.id }) }}">{{ 'admin.show' | trans }}</a>
                     </li>
                     <li>
-                        <a href="{{ path('user_edit', { 'id': entity.id }) }}">edit</a>
+                        <a href="{{ path('user_edit', { 'id': entity.id }) }}">{{ 'admin.edit' | trans }}</a>
                     </li>
                 </ul>
                 </td>
@@ -42,7 +46,7 @@
         <ul>
         <li>
             <a href="{{ path('user_new') }}">
-                Create a new entry
+                {{ 'admin.create-new-user' | trans }}
             </a>
         </li>
     </ul>

@@ -1,0 +1,18 @@
+Create: Stwórz
+Update: Aktualizuj
+Delete: Usuń
+L: L
+M: M
+S: S
+XL: XL
+XXL: XXL
+
+players:
+    country: Kraj
+    list: Lista graczy
+    name: Imię
+    surname: Nazwisko
+
+user:
+    form-roommate-placeholder: Współlokator (pozostaw puste jeżeli nie dotyczy)
+    form-shirt-placeholder: Rozmiar koszulki (wybierz)

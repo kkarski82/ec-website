@@ -1,16 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8"/>
     <title>{% block title %}{% endblock %}</title>
     {% block stylesheets %}
+        {# WARNING! Temporarily remove or comment out the stylesheets when extracting translations to avoid errors #}
         {% stylesheets '@VtesWebsiteBundle/Resources/public/css/*' filter='cssrewrite' %}
-            <link rel="stylesheet" href="{{ asset_url }}">
+        <link rel="stylesheet" href="{{ asset_url }}">
         {% endstylesheets %}
     {% endblock %}
 </head>
 <body>
-{% block body %}{% endblock %}
+<div id="content-wrapper">
+    {{ include ('VtesWebsiteBundle:Partials:navbar.html.twig') }}
+    {% block body %}{% endblock %}
+    {{ include ('VtesWebsiteBundle:Partials:footer.html.twig') }}
+</div>
 {% block javascripts %}{% endblock %}
 </body>
 </html>

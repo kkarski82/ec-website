@@ -1,0 +1,19 @@
+Create: Create
+Update: Update
+Delete: Delete
+
+L: L
+M: M
+S: S
+XL: XL
+XXL: XXL
+
+players:
+    country: Country
+    list: List of players
+    name: First name
+    surname: Last name
+
+user:
+    form-roommate-placeholder: Roommate name (or leave empty)
+    form-shirt-placeholder: Shirt size (select one)

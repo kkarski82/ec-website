@@ -16,11 +16,24 @@ class UserType extends AbstractType
     {
         $builder
             ->add('username', 'email')
-            ->add('vekn')
+            ->add('vekn', 'number', array(
+                'required' => false,
+                'empty_data' => null
+            ))
             ->add('password', 'password')
             ->add('name')
             ->add('surname')
             ->add('country', 'country')
+            ->add('shirt', 'choice', array(
+                'choices' => array('S' => 'S', 'M' => 'M', 'L' => 'L', 'XL' => 'XL', 'XXL' => 'XXL'),
+                'placeholder' => 'user.form-shirt-placeholder'
+            ))
+            ->add('roommate', 'text', array(
+                'attr' => array(
+                    'placeholder' => 'user.form-roommate-placeholder'),
+                'required' => false,
+                'empty_data' => null
+            ))
         ;
     }
     
@@ -40,5 +53,13 @@ class UserType extends AbstractType
     public function getName()
     {
         return 'vtes_bundle_websitebundle_user';
+    }
+
+    /**
+     * Placeholder for message extraction
+     */
+    private function translations() {
+        $this->get('translator')->trans('user.form-roommate-placeholder');
+        $this->get('translator')->trans('user.form-shirt-placeholder');
     }
 }

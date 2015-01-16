@@ -1,15 +1,15 @@
 {% extends 'VtesWebsiteBundle:Layouts:base.html.twig' %}
 
 {% block body -%}
-    <h1>User creation</h1>
+    <h1>{{ 'admin.user-creation' | trans }}</h1>
 
     {{ form(form) }}
 
-        <ul class="record_actions">
-    <li>
-        <a href="{{ path('user') }}">
-            Back to the list
-        </a>
-    </li>
-</ul>
+    <ul class="record_actions">
+        <li>
+            <a href="{{ path('user') }}">
+                {{ 'admin.back-to-list' | trans }}
+            </a>
+        </li>
+    </ul>
 {% endblock %}
