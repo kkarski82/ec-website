@@ -4,7 +4,6 @@ namespace Vtes\Bundle\WebsiteBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
-use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
 class UserType extends AbstractType
 {
@@ -28,23 +27,22 @@ class UserType extends AbstractType
                 'choices' => array('S' => 'S', 'M' => 'M', 'L' => 'L', 'XL' => 'XL', 'XXL' => 'XXL'),
                 'placeholder' => 'user.form-shirt-placeholder'
             ))
-            ->add('roommate', 'text', array(
+            ->add('days', 'choice', array(
+                'choices' => array(1 => '1', 2 => '2', 3 => '3'),
+                'placeholder' => 'user.form-days-placeholder'
+            ))
+            ->add('room', 'choice', array(
+                'choices' => array(0 => 'user.form-room-none', 1 => 'user.form-room-single', 2 => 'user.form-room-double'),
                 'attr' => array(
-                    'placeholder' => 'user.form-roommate-placeholder'),
+                    'placeholder' => 'user.form-room-placeholder',
+                    'onchange' => 'getRoommateOption()')
+            ))->add('roommate', 'text', array(
+                'attr' => array(
+                    'placeholder' => 'user.form-roommate-placeholder'
+                ),
                 'required' => false,
                 'empty_data' => null
-            ))
-        ;
-    }
-    
-    /**
-     * @param OptionsResolverInterface $resolver
-     */
-    public function setDefaultOptions(OptionsResolverInterface $resolver)
-    {
-        $resolver->setDefaults(array(
-            'data_class' => 'Vtes\Bundle\WebsiteBundle\Entity\User'
-        ));
+            ));
     }
 
     /**
@@ -58,8 +56,14 @@ class UserType extends AbstractType
     /**
      * Placeholder for message extraction
      */
-    private function translations() {
+    private function translations()
+    {
         $this->get('translator')->trans('user.form-roommate-placeholder');
         $this->get('translator')->trans('user.form-shirt-placeholder');
+        $this->get('translator')->trans('user.form-room-placeholder');
+        $this->get('translator')->trans('user.form-days-placeholder');
+        $this->get('translator')->trans('user.form-room-none');
+        $this->get('translator')->trans('user.form-room-single');
+        $this->get('translator')->trans('user.form-room-double');
     }
 }

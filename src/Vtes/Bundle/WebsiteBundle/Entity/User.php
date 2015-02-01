@@ -70,6 +70,20 @@ class User implements UserInterface
     private $country;
 
     /**
+     * @var integer
+     *
+     * @ORM\Column(name="days", type="integer")
+     */
+    private $days;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="room", type="integer")
+     */
+    private $room;
+
+    /**
      * @var string
      *
      * @ORM\Column(name="roommate", type="string", length=64, nullable=true)
@@ -93,6 +107,26 @@ class User implements UserInterface
     public function getId()
     {
         return $this->id;
+    }
+
+    /**
+     * Get days
+     *
+     * @return integer
+     */
+    public function getDays()
+    {
+        return $this->days;
+    }
+
+    /**
+     * Get room
+     *
+     * @return integer
+     */
+    public function getRoom()
+    {
+        return $this->room;
     }
 
     /**
@@ -177,6 +211,32 @@ class User implements UserInterface
     //endregion
 
     //region setters
+    /**
+     * Set days
+     *
+     * @param integer $days
+     * @return User
+     */
+    public function setDays($days)
+    {
+        $this->days = $days;
+
+        return $this;
+    }
+
+    /**
+     * Set room
+     *
+     * @param integer $room
+     * @return User
+     */
+    public function setRoom($room)
+    {
+        $this->room = $room;
+
+        return $this;
+    }
+
     /**
      * Set username
      *

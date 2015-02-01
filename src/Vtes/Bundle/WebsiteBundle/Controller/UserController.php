@@ -4,7 +4,6 @@ namespace Vtes\Bundle\WebsiteBundle\Controller;
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-
 use Vtes\Bundle\WebsiteBundle\Entity\User;
 use Vtes\Bundle\WebsiteBundle\Form\UserType;
 
@@ -29,6 +28,7 @@ class UserController extends Controller
             'entities' => $entities,
         ));
     }
+
     /**
      * Creates a new User entity.
      *
