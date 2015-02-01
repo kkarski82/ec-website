@@ -5,10 +5,10 @@ namespace Vtes\Bundle\WebsiteBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
-class DefaultController extends Controller
+class FaqController extends Controller
 {
     /**
-     *  Displays the homepage
+     *  Displays the FAQ page
      *
      * @param Request $request
      *
@@ -18,6 +18,6 @@ class DefaultController extends Controller
     {
         $locale = $request->getLocale();
 
-        return $this->render('VtesWebsiteBundle:Default:index.html.twig', array('locale' => $locale));
+        return $this->render('VtesWebsiteBundle:Faq:index.html.twig', array('locale' => $locale));
     }
 }

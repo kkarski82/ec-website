@@ -1,5 +1,9 @@
 {% extends 'VtesWebsiteBundle:Layouts:base.html.twig' %}
 
+{% block title %}
+    {{ 'Registration' | trans }}
+{% endblock %}
+
 {% block body -%}
     <h1>{{ 'admin.user-creation' | trans }}</h1>
 
@@ -68,13 +72,6 @@
 
     {{ form_end(form) }}
 
-    <ul class="record_actions">
-        <li>
-            <a href="{{ path('user') }}">
-                {{ 'admin.back-to-list' | trans }}
-            </a>
-        </li>
-    </ul>
 {% endblock %}
 
 {% block javascripts %}

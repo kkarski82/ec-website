@@ -1,0 +1,3 @@
+program:
+    path:     /
+    defaults: { _controller: "VtesWebsiteBundle:Program:index" }

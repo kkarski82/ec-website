@@ -1,10 +1,25 @@
 <nav id="navbar">
     <ul>
         <li>
-            <a href="{{ path('homepage') }}">Home</a>
+            <a href="{{ path('homepage') }}">EC 2015</a>
         </li>
         <li>
-            <a href="{{ path('user') }}">User</a>
+            <a href="{{ path('program') }}">{{ 'program' | trans }}</a>
+        </li>
+        <li>
+            <a href="{{ path('prizes') }}">{{ 'prizes' | trans }}</a>
+        </li>
+        <li>
+            <a href="{{ path('hotel') }}">Hotel</a>
+        </li>
+        <li>
+            <a href="{{ path('registration') }}">{{ 'registration' | trans }}</a>
+        </li>
+        <li>
+            <a href="{{ path('faq') }}">FAQ</a>
+        </li>
+        <li>
+            <a href="{{ path('warsaw') }}">{{ 'warsaw' | trans }}</a>
         </li>
     </ul>
     <ul class="lang-select">

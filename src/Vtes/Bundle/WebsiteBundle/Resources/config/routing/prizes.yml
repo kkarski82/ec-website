@@ -1,0 +1,3 @@
+prizes:
+    path:     /
+    defaults: { _controller: "VtesWebsiteBundle:Prizes:index" }

@@ -1,0 +1,12 @@
+registration:
+    path:     /
+    defaults: { _controller: "VtesWebsiteBundle:Registration:index" }
+
+registration_complete:
+    path:     /{id}/complete
+    defaults: { _controller: "VtesWebsiteBundle:Registration:complete" }
+
+registration_register:
+    path:     /register
+    defaults: { _controller: "VtesWebsiteBundle:Registration:register" }
+    requirements: { _method: post }

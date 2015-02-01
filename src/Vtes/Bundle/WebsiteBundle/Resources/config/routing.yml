@@ -2,10 +2,34 @@ vtes_website_index:
     path: /
     defaults: { _controller: VtesWebsiteBundle:Default:index }
 
+vtes_website_faq:
+    resource: "@VtesWebsiteBundle/Resources/config/routing/faq.yml"
+    prefix:   /faq
+
+vtes_website_hotel:
+     resource: "@VtesWebsiteBundle/Resources/config/routing/hotel.yml"
+     prefix:   /hotel
+
 vtes_website_players:
     resource: "@VtesWebsiteBundle/Resources/config/routing/players.yml"
     prefix: /players
 
+vtes_website_prizes:
+     resource: "@VtesWebsiteBundle/Resources/config/routing/prizes.yml"
+     prefix:   /prizes
+
+vtes_website_program:
+     resource: "@VtesWebsiteBundle/Resources/config/routing/program.yml"
+     prefix:   /program
+
+vtes_website_registration:
+    resource: "@VtesWebsiteBundle/Resources/config/routing/registration.yml"
+    prefix:   /registration
+
 vtes_website_user:
     resource: "@VtesWebsiteBundle/Resources/config/routing/user.yml"
     prefix:   /user
+
+vtes_website_warsaw:
+     resource: "@VtesWebsiteBundle/Resources/config/routing/warsaw.yml"
+     prefix:   /warsaw
