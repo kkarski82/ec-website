@@ -19,7 +19,6 @@ class UserType extends AbstractType
                 'required' => false,
                 'empty_data' => null
             ))
-            ->add('password', 'password')
             ->add('name')
             ->add('surname')
             ->add('country', 'country')

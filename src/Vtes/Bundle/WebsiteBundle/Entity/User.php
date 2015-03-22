@@ -3,9 +3,7 @@
 namespace Vtes\Bundle\WebsiteBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Component\Validator\Constraints as Assert;
-use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 /**
  * User
@@ -14,7 +12,7 @@ use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
  * @ORM\Entity
  * @UniqueEntity("username")
  */
-class User implements UserInterface
+class User
 {
     //region attributes
     /**
@@ -40,13 +38,6 @@ class User implements UserInterface
      * @ORM\Column(name="vekn", type="string", length=7, nullable=true)
      */
     private $vekn;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="password", type="string", length=64)
-     */
-    private $password;
 
     /**
      * @var string
@@ -147,16 +138,6 @@ class User implements UserInterface
     public function getVekn()
     {
         return $this->vekn;
-    }
-
-    /**
-     * Get password
-     *
-     * @return string
-     */
-    public function getPassword()
-    {
-        return $this->password;
     }
 
     /**
@@ -264,19 +245,6 @@ class User implements UserInterface
     }
 
     /**
-     * Set password
-     *
-     * @param string $password
-     * @return User
-     */
-    public function setPassword($password)
-    {
-        $this->password = password_hash($password, PASSWORD_BCRYPT);
-
-        return $this;
-    }
-
-    /**
      * Set name
      *
      * @param string $name
@@ -339,23 +307,6 @@ class User implements UserInterface
         $this->shirt = $shirt;
 
         return $this;
-    }
-    //endregion
-
-    //region interface implementation
-    public function eraseCredentials()
-    {
-        // not being used
-    }
-
-    public function getRoles()
-    {
-        return array('ROLE_USER');
-    }
-
-    public function getSalt()
-    {
-        return null; // not required, password_hash does that for us
     }
     //endregion
 }

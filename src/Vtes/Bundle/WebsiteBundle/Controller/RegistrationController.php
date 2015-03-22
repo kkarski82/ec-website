@@ -4,6 +4,7 @@ namespace Vtes\Bundle\WebsiteBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 use Vtes\Bundle\WebsiteBundle\Entity\User;
 use Vtes\Bundle\WebsiteBundle\Form\UserType;
 
@@ -49,10 +50,11 @@ class RegistrationController extends Controller
             throw $this->createNotFoundException('Unable to find User entity.');
         }
 
-        return $this->render('VtesWebsiteBundle:Registration:complete.html.twig', array(
-            'locale' => $locale,
-            'entity'      => $entity,
-        ));
+        return $this->render('VtesWebsiteBundle:Registration:complete.html.twig',
+            array(
+                'locale' => $locale,
+                'entity' => $entity,
+            ));
     }
 
     /**
@@ -102,7 +104,8 @@ class RegistrationController extends Controller
             'method' => 'POST',
         ));
 
-        $form->add('submit', 'submit', array('label' => $this->get('translator')->trans('Register')));
+        $form->add('submit', 'submit', array(
+            'label' => $this->get('translator')->trans('Register')));
 
         return $form;
     }
