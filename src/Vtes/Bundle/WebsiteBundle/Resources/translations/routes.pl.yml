@@ -1,20 +1,26 @@
-# Desc: /
-homepage: /
-
-program: /program/
-
-hotel: /hotel/
-
+# Desc: /faq/
 faq: /faq/
 
-warsaw: /warsaw/
-
-prizes: /prizes/
-
-registration: /registration/
+# Desc: /hotel/
+hotel: /hotel/
 
 # Desc: /players/
 players: /players/
+
+# Desc: /prizes/
+prizes: /prizes/
+
+# Desc: /program/
+program: /program/
+
+# Desc: /registration/
+registration: /registration/
+
+# Desc: /registration/{id}/complete
+registration_complete: '/registration/{id}/complete'
+
+# Desc: /registration/register
+registration_register: /registration/register'
 
 # Desc: /user/
 user: /user/
@@ -39,3 +45,6 @@ user_update: '/user/{id}/update'
 
 # Desc: /
 vtes_website_index: /
+
+# Desc: /warsaw/
+warsaw: /warsaw/

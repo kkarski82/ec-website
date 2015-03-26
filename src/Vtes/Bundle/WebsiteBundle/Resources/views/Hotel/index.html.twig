@@ -1,8 +1,69 @@
 {% extends 'VtesWebsiteBundle:Layouts:base.html.twig' %}
 
-{% block title %}VTES EC 2015{% endblock %}
+{% block title %}VTES EC 2015 - Hotel{% endblock %}
 {% block body %}
     <section id="content">
-        {{ locale }}
+        {% image '@VtesWebsiteBundle/Resources/public/images/hotel-front.jpg' %}
+        <img class="article-image-main" src="{{ asset_url }}" alt="Hotel front">
+        {% endimage %}
+
+        <article>
+            <h1>Hotel</h1>
+
+            <p>
+                Mistrzostwa Europy w 2015 odbędą się w Plaza Hotel w Warszawie w
+                terminie 27.08 – 30.08.2015
+            </p>
+
+            <p>
+                Jest to luksusowy 4 gwiazdkowy hotel w niedalekim sąsiedztwie
+                lotniska Okęcie, z dogodnym dojazdem do centrum Warszawy.
+                Hotel oferuje nowoczesny wystrój w komfortowo urządzonych
+                klimatyzowanych pokojach (minibar, wifi, tvsat, sejf).
+                Podczas turnieju do dyspozycji graczy zostaną oddane sale
+                konferencyjne oraz komfortowy bar na parterze hotelu.
+            </p>
+
+            <h1>
+                Pokoje
+            </h1>
+
+            <p>
+                Dla graczy oraz gości Mistrzostw Europy Hotel Warsaw Plaza
+                przygotował specjalną ofertę:
+                pokoje w opcji pojedyńczy/podwójny w cenie 195pln/pokój w
+                ofercie ze śniadaniem (w formie bufetu).
+                Rezerwacji mozna dokonać rejestrując się na stronie mistrzostw w
+                zakładce „Rejestracja” –
+                specjalna oferta cenowa dotyczy osób zarejestrowanych na stronie
+                mistrzostw.
+                {% image '@VtesWebsiteBundle/Resources/public/images/hotel-room.jpg' %}
+                <img class="article-image-small" src="{{ asset_url }}"
+                     alt="Hotel room">
+                {% endimage %}
+            </p>
+
+            <p>
+                W razie pytań prosimy o kontakt na rszewski@o2.pl
+            </p>
+
+            <p>
+                Podczas mistrzostw przewidujemy również specjalną ofertę
+                związaną z obiadami/kolacjami – szczegóły ogłosimy w póxniejszym
+                terminie.
+            </p>
+
+            <p>
+                Po szczegółowe informacje na temat hotelu zapraszamy na:
+                http://www.warsawplazahotel.pl/en/
+            </p>
+
+            <h1>Wskazówki</h1>
+
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2447.718274084393!2d21.001943000000004!3d52.157633!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x471932fa7ab29e71%3A0xa2f9a353c45d130e!2sWarsaw+Plaza+Hotel!5e0!3m2!1sen!2spl!4v1427410866081"
+                    width="600" height="450" frameborder="0"
+                    style="border:0">
+            </iframe>
+        </article>
     </section>
 {% endblock %}

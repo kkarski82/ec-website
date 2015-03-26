@@ -1,30 +1,60 @@
+1: '1'
+2: '2'
+3: '3'
 Create: Stwórz
-Update: Aktualizuj
 Delete: Usuń
 L: L
 M: M
+Registration: Rejestracja
 S: S
+Update: Aktualizuj
 XL: XL
 XXL: XXL
 
-players:
-    country: Kraj
-    list: Lista graczy
-    name: Imię
-    surname: Nazwisko
-
-user:
-    form-roommate-placeholder: Współlokator (pozostaw puste jeżeli nie dotyczy)
-    form-shirt-placeholder: Rozmiar koszulki (wybierz)
+admin:
+    actions: Akcje
+    back-to-list: Powrót do listy
+    create-new-user: Dodaj gracza
+    edit: Edytuj
+    show: Pokaż
+    user: Gracz
+    user-creation: Tworzenie gracza
+    user-edit: Edycja gracza
+    user-list: Lista graczy
 
 button:
     register: Rejestracja
 
 links:
-    homepage: EC2015
     faq: FAQ
-    registration: Rejestracja
+    homepage: EC2015
     hotel: Hotel
     prizes: Nagrody
     program: Program
+    registration: Rejestracja
     warsaw: Warszawa
+
+players:
+    country: Kraj
+    days: Dni
+    email: E-mail
+    list: Lista graczy
+    name: Imię
+    room: Pokój
+    roommate: Wpółlokator
+    shirt: Rozmiar koszulki
+    surname: Nazwisko
+    vekn: VEKN (opcjonalnie)
+
+registration:
+    title: Rejestracja gracza
+    complete: Rejestracja zakończona
+
+user:
+    form-days-placeholder: Ilość dni (wybierz)
+    form-room-double: Pokój dwuosobowy
+    form-room-none: Brak
+    form-room-placeholder: pokój
+    form-room-single: Pokój jednoosobowy
+    form-roommate-placeholder: Współlokator (pozostaw puste jeżeli nie dotyczy)
+    form-shirt-placeholder: Rozmiar koszulki (wybierz)

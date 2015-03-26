@@ -3,6 +3,6 @@
 {% block title %}VTES EC 2015{% endblock %}
 {% block body %}
     <section id="content">
-        {{ locale }}
+        {{ app.request.attributes.get('_route') }}
     </section>
 {% endblock %}

@@ -4,7 +4,6 @@
     <meta charset="UTF-8"/>
     <title>{% block title %}{% endblock %}</title>
     {% block stylesheets %}
-        {# WARNING! Temporarily remove or comment out the stylesheets when extracting translations to avoid errors #}
         {% stylesheets '@VtesWebsiteBundle/Resources/public/css/*' filter='cssrewrite' %}
         <link rel="stylesheet" href="{{ asset_url }}">
         {% endstylesheets %}

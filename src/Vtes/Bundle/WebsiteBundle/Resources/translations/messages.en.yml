@@ -1,19 +1,60 @@
+1: '1'   # FIXME
+2: '2'   # FIXME
+3: '3'   # FIXME
 Create: Create
-Update: Update
 Delete: Delete
-
 L: L
 M: M
+Registration: Registration
 S: S
+Update: Update
 XL: XL
 XXL: XXL
 
+admin:
+    actions: Actions
+    back-to-list: Back to the list
+    create-new-user: Create new player
+    edit: Edit
+    show: Show
+    user: Player
+    user-creation: Player creation
+    user-edit: Player edit
+    user-list: Player list
+
+button:
+    register: Register
+
+links:
+    faq: FAQ
+    homepage: EC2015
+    hotel: Hotel
+    prizes: Prizes
+    program: Program
+    registration: Registration
+    warsaw: Warsaw
+
 players:
     country: Country
+    days: Days
+    email: E-mail
     list: List of players
     name: First name
+    room: Room
+    roommate: Roommate
+    shirt: Shirt
     surname: Last name
+    vekn: VEKN (optional)
+
+registration:
+    title: Player registration
+    complete: Registration complete
 
 user:
+    form-days-placeholder: Number of days (choose)
+    form-room-double: Double room
+    form-room-none: None
+    form-room-placeholder: Room (choose)
+    form-room-single: Single room
     form-roommate-placeholder: Roommate name (or leave empty)
     form-shirt-placeholder: Shirt size (select one)

@@ -5,11 +5,9 @@
 {% endblock %}
 
 {% block body -%}
-    <h1>{{ 'admin.user-creation' | trans }}</h1>
-
     {{ form_start(form) }}
     {{ form_errors(form) }}
-
+    <h1>{{ 'registration.title' | trans }}</h1>
     <div>
         {{ form_label(form.username) }}
         {{ form_errors(form.username) }}

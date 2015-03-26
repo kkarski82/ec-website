@@ -6,7 +6,8 @@ html, body {
   margin: 0;
   padding: 0;
   font-size: 16px;
-  font-color: @font-color;
+  color: @font-color;
+  background-color: @background-color;
 }
 
 a {
@@ -17,12 +18,16 @@ a {
   -webkit-transition: color 0.5s ease-in-out;
   color: @link-color;
 
-  &:hover, &:focus {
+  &:hover {
     color: @link-hover-color;
   }
 
   &.active {
     color: @link-active-color;
+
+    &:hover {
+      color: @link-hover-color;
+    }
   }
 
   &.lang {
@@ -31,9 +36,13 @@ a {
 
     &.active {
       color: @link-color;
+
+      &:hover {
+        color: @link-hover-color;
+      }
     }
 
-    &:hover, &:focus {
+    &:hover {
       color: @link-hover-color;
     }
   }
@@ -47,6 +56,26 @@ a {
 
 #content {
   min-height: 500px;
+
+  h1 {
+    border-bottom: 1px solid @font-dim-color;
+    color: @link-color;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    width: 60%;
+  }
+
+  p {
+    width: 60%;
+    line-height: 1.5;
+  }
+
+  .article-image-small {
+    max-width: 40%;
+    max-height: 100%;
+    float: right;
+  }
 }
 
 #navbar {
@@ -80,6 +109,41 @@ a {
       }
     }
   }
+}
+
+header {
+  #logo {
+    width: 75%;
+    float: left;
+
+    img {
+      width: 30%;
+      height: auto;
+      float: left;
+    }
+
+    h1 {
+      width: 70%;
+      float: left;
+      text-align: center;
+    }
+  }
+
+  #main-image {
+    width: 25%;
+    float: left;
+    height: 300px;
+    max-height: 300px;
+
+    img {
+      float: right;
+    }
+  }
+}
+
+img {
+  max-width: 100%;
+  max-height: 100%;
 }
 
 footer {

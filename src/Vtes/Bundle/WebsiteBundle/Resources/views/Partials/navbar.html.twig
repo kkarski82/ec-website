@@ -1,33 +1,53 @@
+<header>
+    <div id="logo">
+    {% image '@VtesWebsiteBundle/Resources/public/images/logo.png' %}
+        <img src="{{ asset_url }}" alt="EC2015 Logo">
+    {% endimage %}
+        <h1>
+            VTES EC 2015
+            <br>
+            <small>
+                Warsaw, Poland
+            </small>
+        </h1>
+    </div>
+    <div id="main-image">
+    {% image '@VtesWebsiteBundle/Resources/public/images/main-image.png' %}
+        <img src="{{ asset_url }}" alt="EC2015 Warsaw, Poland">
+    {% endimage %}
+    </div>
+</header>
+
 <nav id="navbar">
     <ul>
         <li>
-            <a href="{{ path('vtes_website_index') }}">{{ 'links.homepage' | trans }}</a>
+            <a {{ (app.request.attributes.get('_route')) == 'vtes_website_index' ? 'class="active"' }} href="{{ path('vtes_website_index') }}">{{ 'links.homepage' | trans }}</a>
         </li>
         <li>
-            <a href="{{ path('program') }}">{{ 'links.program' | trans }}</a>
+            <a {{ (app.request.attributes.get('_route')) == 'program' ? 'class="active"' }} href="{{ path('program') }}">{{ 'links.program' | trans }}</a>
         </li>
         <li>
-            <a href="{{ path('prizes') }}">{{ 'links.prizes' | trans }}</a>
+            <a {{ (app.request.attributes.get('_route')) == 'prizes' ? 'class="active"' }} href="{{ path('prizes') }}">{{ 'links.prizes' | trans }}</a>
         </li>
         <li>
-            <a href="{{ path('hotel') }}">{{ 'links.hotel' | trans }}</a>
+            <a {{ (app.request.attributes.get('_route')) == 'hotel' ? 'class="active"' }} href="{{ path('hotel') }}">{{ 'links.hotel' | trans }}</a>
         </li>
         <li>
-            <a href="{{ path('registration') }}">{{ 'links.registration' | trans }}</a>
+            <a {{ (app.request.attributes.get('_route')) == 'registration' ? 'class="active"' }} href="{{ path('registration') }}">{{ 'links.registration' | trans }}</a>
         </li>
         <li>
-            <a href="{{ path('faq') }}">{{ 'links.faq' | trans }}</a>
+            <a {{ (app.request.attributes.get('_route')) == 'faq' ? 'class="active"' }} href="{{ path('faq') }}">{{ 'links.faq' | trans }}</a>
         </li>
         <li>
-            <a href="{{ path('warsaw') }}">{{ 'links.warsaw' | trans }}</a>
+            <a {{ (app.request.attributes.get('_route')) == 'warsaw' ? 'class="active"' }} href="{{ path('warsaw') }}">{{ 'links.warsaw' | trans }}</a>
         </li>
     </ul>
     <ul class="lang-select">
         <li>
-            <a class="lang" href="{{ path(app.request.get('_route'), app.request.get('_route_params')|merge({'_locale': 'en'})) }}">en</a>
+            <a class="lang{{ locale == 'en' ? ' active' }}" href="{{ path(app.request.get('_route'), app.request.get('_route_params')|merge({'_locale': 'en'})) }}">en</a>
         </li>
         <li>
-            <a class="lang" href="{{ path(app.request.get('_route'), app.request.get('_route_params')|merge({'_locale': 'pl'})) }}">pl</a>
+            <a class="lang{{ locale == 'pl' ? ' active' }}" href="{{ path(app.request.get('_route'), app.request.get('_route_params')|merge({'_locale': 'pl'})) }}">pl</a>
         </li>
     </ul>
 </nav>
