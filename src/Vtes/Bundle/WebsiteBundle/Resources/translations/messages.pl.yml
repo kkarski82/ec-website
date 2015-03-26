@@ -16,3 +16,15 @@ players:
 user:
     form-roommate-placeholder: Współlokator (pozostaw puste jeżeli nie dotyczy)
     form-shirt-placeholder: Rozmiar koszulki (wybierz)
+
+button:
+    register: Rejestracja
+
+links:
+    homepage: EC2015
+    faq: FAQ
+    registration: Rejestracja
+    hotel: Hotel
+    prizes: Nagrody
+    program: Program
+    warsaw: Warszawa

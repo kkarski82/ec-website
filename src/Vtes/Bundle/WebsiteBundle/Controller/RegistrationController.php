@@ -105,7 +105,7 @@ class RegistrationController extends Controller
         ));
 
         $form->add('submit', 'submit', array(
-            'label' => $this->get('translator')->trans('Register')));
+            'label' => $this->get('translator')->trans('button.register')));
 
         return $form;
     }

@@ -4,6 +4,7 @@ namespace Vtes\Bundle\WebsiteBundle\Controller;
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\Response;
 use Vtes\Bundle\WebsiteBundle\Entity\User;
 use Vtes\Bundle\WebsiteBundle\Form\UserType;
 
@@ -32,6 +33,8 @@ class UserController extends Controller
     /**
      * Creates a new User entity.
      *
+     * @param Request $request
+     * @return Response the view
      */
     public function createAction(Request $request)
     {
@@ -75,6 +78,7 @@ class UserController extends Controller
     /**
      * Displays a form to create a new User entity.
      *
+     * @return Response the view
      */
     public function newAction()
     {
@@ -89,6 +93,9 @@ class UserController extends Controller
 
     /**
      * Finds and displays a User entity.
+     *
+     * @param mixed $id
+     * @return Response the view
      *
      */
     public function showAction($id)
@@ -112,6 +119,8 @@ class UserController extends Controller
     /**
      * Displays a form to edit an existing User entity.
      *
+     * @param mixed $id
+     * @return Response the view
      */
     public function editAction($id)
     {
@@ -154,6 +163,9 @@ class UserController extends Controller
     /**
      * Edits an existing User entity.
      *
+     * @param Request $request
+     * @param mixed $id
+     * @return Response the view
      */
     public function updateAction(Request $request, $id)
     {
@@ -184,6 +196,9 @@ class UserController extends Controller
     /**
      * Deletes a User entity.
      *
+     * @param Request $request
+     * @param mixed $id
+     * @return Response the view
      */
     public function deleteAction(Request $request, $id)
     {
