@@ -28,3 +28,7 @@ user_delete:
     path:     /{id}/delete
     defaults: { _controller: "VtesWebsiteBundle:User:delete" }
     requirements: { _method: post|delete }
+
+user_print:
+    path:   /print
+    defaults: { _controller: "VtesWebsiteBundle:User:print" }

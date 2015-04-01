@@ -1,10 +1,11 @@
 {% extends 'VtesWebsiteBundle:Layouts:base.html.twig' %}
 
 {% block body -%}
-    <h1>{{ 'admin.user-list' | trans }}</h1>
+    <section id="content">
+        <h1>{{ 'admin.user-list' | trans }}</h1>
 
-    <table class="records_list">
-        <thead>
+        <table class="records_list">
+            <thead>
             <tr>
                 <th>Id</th>
                 <th>{{ 'players.email' | trans }}</th>
@@ -18,40 +19,48 @@
                 <th>{{ 'players.roommate' | trans }}</th>
                 <th>{{ 'admin.actions' | trans }}</th>
             </tr>
-        </thead>
-        <tbody>
-        {% for entity in entities %}
-            <tr>
-                <td><a href="{{ path('user_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
-                <td>{{ entity.username }}</td>
-                <td>{{ entity.vekn }}</td>
-                <td>{{ entity.name }}</td>
-                <td>{{ entity.surname }}</td>
-                <td>{{ entity.country | country }}</td>
-                <td>{{ entity.shirt }}</td>
-                <td>{{ entity.days }}</td>
-                <td>{{ entity.room }}</td>
-                <td>{{ entity.roommate }}</td>
-                <td>
-                <ul>
-                    <li>
-                        <a href="{{ path('user_show', { 'id': entity.id }) }}">{{ 'admin.show' | trans }}</a>
-                    </li>
-                    <li>
-                        <a href="{{ path('user_edit', { 'id': entity.id }) }}">{{ 'admin.edit' | trans }}</a>
-                    </li>
-                </ul>
-                </td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+            {% for entity in entities %}
+                <tr>
+                    <td>
+                        <a href="{{ path('user_show', { 'id': entity.id }) }}">{{ entity.id }}</a>
+                    </td>
+                    <td>{{ entity.username }}</td>
+                    <td>{{ entity.vekn }}</td>
+                    <td>{{ entity.name }}</td>
+                    <td>{{ entity.surname }}</td>
+                    <td>{{ entity.country | country }}</td>
+                    <td>{{ entity.shirt }}</td>
+                    <td>{{ entity.days }}</td>
+                    <td>{{ entity.room }}</td>
+                    <td>{{ entity.roommate }}</td>
+                    <td>
+                        <ul>
+                            <li>
+                                <a href="{{ path('user_show', { 'id': entity.id }) }}">{{ 'admin.show' | trans }}</a>
+                            </li>
+                            <li>
+                                <a href="{{ path('user_edit', { 'id': entity.id }) }}">{{ 'admin.edit' | trans }}</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
 
         <ul>
-        <li>
-            <a href="{{ path('user_new') }}">
-                {{ 'admin.create-new-user' | trans }}
-            </a>
-        </li>
-    </ul>
-    {% endblock %}
+            <li>
+                <a href="{{ path('user_new') }}">
+                    {{ 'admin.create-new-user' | trans }}
+                </a>
+            </li>
+            <li>
+                <a href="{{ path('user_print') }}">
+                    {{ 'admin.print-user-list' | trans }}
+                </a>
+            </li>
+        </ul>
+    </section>
+{% endblock %}

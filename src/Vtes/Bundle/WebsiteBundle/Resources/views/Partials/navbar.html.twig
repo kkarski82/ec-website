@@ -4,10 +4,11 @@
         <img src="{{ asset_url }}" alt="EC2015 Logo">
     {% endimage %}
         <h1>
-            VTES EC 2015
+            {{ 'page.title.main' | trans }}
             <br>
             <small>
-                Warsaw, Poland
+                {{ 'page.title.date' | trans }}<br>
+                {{ 'page.title.location' | trans }}
             </small>
         </h1>
     </div>
@@ -23,12 +24,12 @@
         <li>
             <a {{ (app.request.attributes.get('_route')) == 'vtes_website_index' ? 'class="active"' }} href="{{ path('vtes_website_index') }}">{{ 'links.homepage' | trans }}</a>
         </li>
-        <li>
-            <a {{ (app.request.attributes.get('_route')) == 'program' ? 'class="active"' }} href="{{ path('program') }}">{{ 'links.program' | trans }}</a>
-        </li>
-        <li>
-            <a {{ (app.request.attributes.get('_route')) == 'prizes' ? 'class="active"' }} href="{{ path('prizes') }}">{{ 'links.prizes' | trans }}</a>
-        </li>
+        {#<li>#}
+            {#<a {{ (app.request.attributes.get('_route')) == 'program' ? 'class="active"' }} href="{{ path('program') }}">{{ 'links.program' | trans }}</a>#}
+        {#</li>#}
+        {#<li>#}
+            {#<a {{ (app.request.attributes.get('_route')) == 'prizes' ? 'class="active"' }} href="{{ path('prizes') }}">{{ 'links.prizes' | trans }}</a>#}
+        {#</li>#}
         <li>
             <a {{ (app.request.attributes.get('_route')) == 'hotel' ? 'class="active"' }} href="{{ path('hotel') }}">{{ 'links.hotel' | trans }}</a>
         </li>
@@ -36,11 +37,11 @@
             <a {{ (app.request.attributes.get('_route')) == 'registration' ? 'class="active"' }} href="{{ path('registration') }}">{{ 'links.registration' | trans }}</a>
         </li>
         <li>
-            <a {{ (app.request.attributes.get('_route')) == 'faq' ? 'class="active"' }} href="{{ path('faq') }}">{{ 'links.faq' | trans }}</a>
+            <a {{ (app.request.attributes.get('_route')) == 'players' ? 'class="active"' }} href="{{ path('players') }}">{{ 'links.players' | trans }}</a>
         </li>
-        <li>
-            <a {{ (app.request.attributes.get('_route')) == 'warsaw' ? 'class="active"' }} href="{{ path('warsaw') }}">{{ 'links.warsaw' | trans }}</a>
-        </li>
+        {#<li>#}
+            {#<a {{ (app.request.attributes.get('_route')) == 'warsaw' ? 'class="active"' }} href="{{ path('warsaw') }}">{{ 'links.warsaw' | trans }}</a>#}
+        {#</li>#}
     </ul>
     <ul class="lang-select">
         <li>

@@ -1,8 +1,6 @@
 {% extends 'VtesWebsiteBundle:Layouts:base.html.twig' %}
 
-{% block title %}
-    {{ 'Registration' | trans }}
-{% endblock %}
+{% block title %}{{ 'page.title.main' | trans }} - {{ 'registration.title' | trans }}{% endblock %}
 
 {% block body -%}
     {{ form_start(form) }}

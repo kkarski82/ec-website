@@ -43,6 +43,8 @@ user_show: '/user/{id}/show'
 # Desc: /user/{id}/update
 user_update: '/user/{id}/update'
 
+user_print: '/user/print'
+
 # Desc: /
 vtes_website_index: /
 

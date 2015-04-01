@@ -1,13 +1,15 @@
 {% extends 'VtesWebsiteBundle:Layouts:base.html.twig' %}
 
+{% block title %}{{ 'page.title.main' | trans }} - {{ 'players.title' | trans }}{% endblock %}
+
 {% block body -%}
-    <h1>{{ 'players.list' | trans }}</h1>
+    <section id="content">
+    <h1>{{ 'players.registered' | trans }}</h1>
 
     <table class="records_list">
         <thead>
         <tr>
             <th>#</th>
-            <th>VEKN</th>
             <th>{{ 'players.name' | trans }}</th>
             <th>{{ 'players.surname' | trans }}</th>
             <th>{{ 'players.country' | trans }}</th>
@@ -18,7 +20,6 @@
         {% for entity in entities %}
             <tr>
                 <td>{{ i }}</td>
-                <td>{{ entity.vekn }}</td>
                 <td>{{ entity.name }}</td>
                 <td>{{ entity.surname }}</td>
                 <td>{{ entity.country | country }}</td>
@@ -27,4 +28,5 @@
         {% endfor %}
         </tbody>
     </table>
+    </section>
 {% endblock %}

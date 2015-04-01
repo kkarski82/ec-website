@@ -1,8 +1,16 @@
 {% extends 'VtesWebsiteBundle:Layouts:base.html.twig' %}
 
-{% block title %}VTES EC 2015{% endblock %}
+{% block title %}{{ 'page.title.main' | trans }}{% endblock %}
+
 {% block body %}
     <section id="content">
-        {{ locale }}
+        <h1>{{ 'page.title.main' | trans }}</h1>
+        <p>{{ 'ec.1' | trans }}</p>
+        <p>{{ 'ec.2' | trans }}</p>
+        <p>{{ 'ec.3' | trans }}</p>
+        <p>{{ 'ec.4' | trans }}</p>
+        <p>{{ 'ec.5' | trans }}</p>
+        <p>{{ 'ec.6' | trans }}</p>
+        <p>{{ 'ec.7' | trans }}</p>
     </section>
 {% endblock %}

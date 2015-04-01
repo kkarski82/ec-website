@@ -19,6 +19,7 @@ class AppKernel extends Kernel
             new Sonata\IntlBundle\SonataIntlBundle(),
             new JMS\I18nRoutingBundle\JMSI18nRoutingBundle(),
             new JMS\TranslationBundle\JMSTranslationBundle(),
+            new Liuggio\ExcelBundle\LiuggioExcelBundle(),
             new Vtes\Bundle\WebsiteBundle\VtesWebsiteBundle(),
         );
 

@@ -1,74 +1,76 @@
 {% extends 'VtesWebsiteBundle:Layouts:base.html.twig' %}
 
 {% block body -%}
-    <h1>{{ 'admin.user-creation' | trans }}</h1>
+    <section id="content">
+        <h1>{{ 'admin.user-creation' | trans }}</h1>
 
-    {{ form_start(form) }}
-    {{ form_errors(form) }}
+        {{ form_start(form) }}
+        {{ form_errors(form) }}
 
-    <div>
-        {{ form_label(form.username) }}
-        {{ form_errors(form.username) }}
-        {{ form_widget(form.username) }}
-    </div>
+        <div>
+            {{ form_label(form.username) }}
+            {{ form_errors(form.username) }}
+            {{ form_widget(form.username) }}
+        </div>
 
-    <div>
-        {{ form_label(form.vekn) }}
-        {{ form_errors(form.vekn) }}
-        {{ form_widget(form.vekn) }}
-    </div>
+        <div>
+            {{ form_label(form.vekn) }}
+            {{ form_errors(form.vekn) }}
+            {{ form_widget(form.vekn) }}
+        </div>
 
-    <div>
-        {{ form_label(form.name) }}
-        {{ form_errors(form.name) }}
-        {{ form_widget(form.name) }}
-    </div>
+        <div>
+            {{ form_label(form.name) }}
+            {{ form_errors(form.name) }}
+            {{ form_widget(form.name) }}
+        </div>
 
-    <div>
-        {{ form_label(form.surname) }}
-        {{ form_errors(form.surname) }}
-        {{ form_widget(form.surname) }}
-    </div>
+        <div>
+            {{ form_label(form.surname) }}
+            {{ form_errors(form.surname) }}
+            {{ form_widget(form.surname) }}
+        </div>
 
-    <div>
-        {{ form_label(form.country) }}
-        {{ form_errors(form.country) }}
-        {{ form_widget(form.country) }}
-    </div>
+        <div>
+            {{ form_label(form.country) }}
+            {{ form_errors(form.country) }}
+            {{ form_widget(form.country) }}
+        </div>
 
-    <div>
-        {{ form_label(form.shirt) }}
-        {{ form_errors(form.shirt) }}
-        {{ form_widget(form.shirt) }}
-    </div>
+        <div>
+            {{ form_label(form.shirt) }}
+            {{ form_errors(form.shirt) }}
+            {{ form_widget(form.shirt) }}
+        </div>
 
-    <div>
-        {{ form_label(form.days) }}
-        {{ form_errors(form.days) }}
-        {{ form_widget(form.days) }}
-    </div>
+        <div>
+            {{ form_label(form.days) }}
+            {{ form_errors(form.days) }}
+            {{ form_widget(form.days) }}
+        </div>
 
-    <div>
-        {{ form_label(form.room) }}
-        {{ form_errors(form.room) }}
-        {{ form_widget(form.room) }}
-    </div>
+        <div>
+            {{ form_label(form.room) }}
+            {{ form_errors(form.room) }}
+            {{ form_widget(form.room) }}
+        </div>
 
-    <div id="roommate-option">
-        {{ form_label(form.roommate) }}
-        {{ form_errors(form.roommate) }}
-        {{ form_widget(form.roommate) }}
-    </div>
+        <div id="roommate-option">
+            {{ form_label(form.roommate) }}
+            {{ form_errors(form.roommate) }}
+            {{ form_widget(form.roommate) }}
+        </div>
 
-    {{ form_end(form) }}
+        {{ form_end(form) }}
 
-    <ul class="record_actions">
-        <li>
-            <a href="{{ path('user') }}">
-                {{ 'admin.back-to-list' | trans }}
-            </a>
-        </li>
-    </ul>
+        <ul class="record_actions">
+            <li>
+                <a href="{{ path('user') }}">
+                    {{ 'admin.back-to-list' | trans }}
+                </a>
+            </li>
+        </ul>
+    </section>
 {% endblock %}
 
 {% block javascripts %}

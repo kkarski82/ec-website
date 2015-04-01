@@ -11,6 +11,12 @@ Update: Update
 XL: XL
 XXL: XXL
 
+page:
+  title:
+    main: VTES EC 2015
+    date: 27-30 September
+    location: Warsaw, Poland
+
 admin:
     actions: Actions
     back-to-list: Back to the list
@@ -21,6 +27,7 @@ admin:
     user-creation: Player creation
     user-edit: Player edit
     user-list: Player list
+    print-user-list: Print player list
 
 button:
     register: Register
@@ -33,8 +40,10 @@ links:
     program: Program
     registration: Registration
     warsaw: Warsaw
+    players: Players
 
 players:
+    title: Players
     country: Country
     days: Days
     email: E-mail
@@ -45,9 +54,11 @@ players:
     shirt: Shirt
     surname: Last name
     vekn: VEKN (optional)
+    registered: Registered players
+    veknShort: VEKN
 
 registration:
-    title: Player registration
+    title: Registration
     complete: Registration complete
 
 user:
@@ -58,3 +69,64 @@ user:
     form-room-single: Single room
     form-roommate-placeholder: Roommate name (or leave empty)
     form-shirt-placeholder: Shirt size (select one)
+
+hotel:
+    title: Hotel
+    rooms: Rooms
+    intro:
+      head: 2015 European Championship will be held in Warsaw Plaza Hotel on the 27th to 30th of September
+      body: >
+            It is a luxurious 4-star hotel in the vicinity of Okęcie airport,
+            with good communication to the city center. The hotel offers modern
+            decor in a comfortable rooms with air conditioning (minibar, Wi-Fi,
+            TV sat, safe). During the tournament players will have access to
+            conference rooms and comfortable bar on the ground floor of the
+            hotel.
+    desc: >
+          Warsaw Plaza Hotel has prepared a special offer for the Championship
+          players and guests:
+          single/double room options at the price of 195PLN/room, the offer includes
+          breakfast (in the form of buffet).
+          You can make your reservation by registering on the EC website in the
+          "Registration" section - special price offer applies to those registered
+          on the website.
+    info: For more detailed information regarding the hotel please visit:
+    contact: In case of questions or concerns please contact rszewski [at] o2 [dot] pl
+    offer: >
+           During the championship we will also have a special offer regarding
+           lunch/supper - details will be announced at a later date.
+    directions: Directions
+
+ec:
+  1: And we meet again...
+  2: >
+     4 years have passed since the last European Championship held in Warsaw and
+     even in our wildest dreams we didn't think that we'll get another chance to
+     accomodate players from entire Europe (and not just that) in such short time.
+     In 2011 we have organized a tournament, which ended up being a great success
+     in terms of organization and attendance (we're not bragging - we were being
+     praised). Despite all the effort it cost us and many sleepless nights, very
+     quickly we wanted a "repeat of the fun" (to quote classic Polish audition)
+     and here it is. European Championship 2015 in Poland.
+  3: >
+     We're fully aware that it isn't easy to organize a tournament of such scale
+     and gather enough players in those hard times for VTES - many of us reminisce
+     the days, when tournaments of this rank gathered almost two hundred players.
+  4: >
+     Well, we live in a world of dreams which should be realized; that's why our
+     first thought was "why not?". Why not organize the biggest tournament in
+     years? Why not count on attendance getting close to the magic 200 people?
+     Why not go out of the usual bounds and prepare something extra? Something outside
+     of the usual programme and surprising? Asking those questions to ourselves
+     we've decided it's worth a try.
+  5: >
+     This website is meant to make it easier for you to make a decision - to come
+     or not to come? You'll learn everything about the tournament here: hotel
+     prices, costs, parties, prizes etc. Information will be added to the website
+     as soon as we confirm it.
+  6: >
+     We believe that the effort extended so far, and things we want to prepare
+     for you will make it so that you'll decide to spend the end of September
+     in hot Warsaw, playing your favourite game in an excellent company of friends
+     and rivals. That's what we wish upon you and ourselves.
+  7: Organizers.

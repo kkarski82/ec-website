@@ -18,15 +18,20 @@ class UserController extends Controller
     /**
      * Lists all User entities.
      *
+     * @param Request $request
+     *
+     * @return Response The view
      */
-    public function indexAction()
+    public function indexAction(Request $request)
     {
+        $locale = $request->getLocale();
         $em = $this->getDoctrine()->getManager();
 
         $entities = $em->getRepository('VtesWebsiteBundle:User')->findAll();
 
         return $this->render('VtesWebsiteBundle:User:index.html.twig', array(
             'entities' => $entities,
+            'locale' => $locale
         ));
     }
 
@@ -38,6 +43,7 @@ class UserController extends Controller
      */
     public function createAction(Request $request)
     {
+        $locale = $request->getLocale();
         $entity = new User();
         $form = $this->createCreateForm($entity);
         $form->handleRequest($request);
@@ -52,6 +58,7 @@ class UserController extends Controller
 
         return $this->render('VtesWebsiteBundle:User:new.html.twig', array(
             'entity' => $entity,
+            'locale' => $locale,
             'form'   => $form->createView(),
         ));
     }
@@ -78,15 +85,18 @@ class UserController extends Controller
     /**
      * Displays a form to create a new User entity.
      *
+     * @param Request $request
      * @return Response the view
      */
-    public function newAction()
+    public function newAction(Request $request)
     {
+        $locale = $request->getLocale();
         $entity = new User();
         $form   = $this->createCreateForm($entity);
 
         return $this->render('VtesWebsiteBundle:User:new.html.twig', array(
             'entity' => $entity,
+            'locale' => $locale,
             'form'   => $form->createView(),
         ));
     }
@@ -94,12 +104,14 @@ class UserController extends Controller
     /**
      * Finds and displays a User entity.
      *
+     * @param Request $request
      * @param mixed $id
      * @return Response the view
      *
      */
-    public function showAction($id)
+    public function showAction(Request $request, $id)
     {
+        $locale = $request->getLocale();
         $em = $this->getDoctrine()->getManager();
 
         $entity = $em->getRepository('VtesWebsiteBundle:User')->find($id);
@@ -112,6 +124,7 @@ class UserController extends Controller
 
         return $this->render('VtesWebsiteBundle:User:show.html.twig', array(
             'entity'      => $entity,
+            'locale'      => $locale,
             'delete_form' => $deleteForm->createView(),
         ));
     }
@@ -119,11 +132,13 @@ class UserController extends Controller
     /**
      * Displays a form to edit an existing User entity.
      *
+     * @param Request $request
      * @param mixed $id
      * @return Response the view
      */
-    public function editAction($id)
+    public function editAction(Request $request, $id)
     {
+        $locale = $request->getLocale();
         $em = $this->getDoctrine()->getManager();
 
         $entity = $em->getRepository('VtesWebsiteBundle:User')->find($id);
@@ -137,6 +152,7 @@ class UserController extends Controller
 
         return $this->render('VtesWebsiteBundle:User:edit.html.twig', array(
             'entity'      => $entity,
+            'locale'      => $locale,
             'edit_form'   => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
         ));
@@ -169,6 +185,7 @@ class UserController extends Controller
      */
     public function updateAction(Request $request, $id)
     {
+        $locale = $request->getLocale();
         $em = $this->getDoctrine()->getManager();
 
         $entity = $em->getRepository('VtesWebsiteBundle:User')->find($id);
@@ -189,6 +206,7 @@ class UserController extends Controller
 
         return $this->render('VtesWebsiteBundle:User:edit.html.twig', array(
             'entity'      => $entity,
+            'locale'      => $locale,
             'edit_form'   => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
         ));
@@ -235,5 +253,65 @@ class UserController extends Controller
             ->add('submit', 'submit', array('label' => 'Delete'))
             ->getForm()
         ;
+    }
+
+    /**
+     * @return Response spreadsheet
+     */
+    public function printAction()
+    {
+        $em = $this->getDoctrine()->getManager();
+        $entities = $em->getRepository('VtesWebsiteBundle:User')->findAll();
+        $phpExcelObject = $this->get('phpexcel')->createPHPExcelObject();
+
+        $phpExcelObject->getProperties()->setCreator('EC website')
+            ->setLastModifiedBy('EC website')
+            ->setTitle('Lista graczy')
+            ->setSubject('Lista graczy')
+            ->setDescription('Lista graczy zarejestrowanych na VTES EC 2015');
+        $phpExcelObject->setActiveSheetIndex(0)
+            ->setCellValue('A1', 'VEKN')
+            ->setCellValue('B1', 'E-mail')
+            ->setCellValue('C1', 'Imię')
+            ->setCellValue('D1', 'Nazwisko')
+            ->setCellValue('E1', 'Kraj')
+            ->setCellValue('F1', 'Rozmiar koszulki')
+            ->setCellValue('G1', 'Liczba dni')
+            ->setCellValue('H1', 'Pokój')
+            ->setCellValue('I1', 'Współlokator');
+
+        $index = 2;
+
+        /** @var User $entity */
+        foreach ($entities as $entity) {
+            $phpExcelObject->setActiveSheetIndex(0)
+                ->setCellValue('A' . strval($index), $entity->getVekn())
+                ->setCellValue('B' . strval($index), $entity->getUsername())
+                ->setCellValue('C' . strval($index), $entity->getName())
+                ->setCellValue('D' . strval($index), $entity->getSurname())
+                ->setCellValue('E' . strval($index), $entity->getCountry())
+                ->setCellValue('F' . strval($index), $entity->getShirt())
+                ->setCellValue('G' . strval($index), $entity->getDays())
+                ->setCellValue('H' . strval($index), $entity->getRoom())
+                ->setCellValue('I' . strval($index), $entity->getRoommate());
+
+            $index += 1;
+        }
+
+        $phpExcelObject->getActiveSheet()->setTitle('Lista graczy');
+        // Set active sheet index to the first sheet, so Excel opens this as the first sheet
+        $phpExcelObject->setActiveSheetIndex(0);
+
+        // create the writer
+        $writer = $this->get('phpexcel')->createWriter($phpExcelObject, 'Excel5');
+        // create the response
+        $response = $this->get('phpexcel')->createStreamedResponse($writer);
+        // adding headers
+        $response->headers->set('Content-Type', 'text/vnd.ms-excel; charset=utf-8');
+        $response->headers->set('Content-Disposition', 'attachment;filename=ec-players.xls');
+        $response->headers->set('Pragma', 'public');
+        $response->headers->set('Cache-Control', 'maxage=1');
+
+        return $response;
     }
 }

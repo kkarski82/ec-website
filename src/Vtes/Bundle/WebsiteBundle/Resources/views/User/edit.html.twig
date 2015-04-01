@@ -1,16 +1,18 @@
 {% extends 'VtesWebsiteBundle:Layouts:base.html.twig' %}
 
 {% block body -%}
-    <h1>{{ 'admin.user-edit' | trans }}</h1>
+    <section id="content">
+        <h1>{{ 'admin.user-edit' | trans }}</h1>
 
-    {{ form(edit_form) }}
+        {{ form(edit_form) }}
 
-    <ul class="record_actions">
-        <li>
-            <a href="{{ path('user') }}">
-                {{ 'admin.back-to-list' | trans }}
-            </a>
-        </li>
-        <li>{{ form(delete_form) }}</li>
-    </ul>
+        <ul class="record_actions">
+            <li>
+                <a href="{{ path('user') }}">
+                    {{ 'admin.back-to-list' | trans }}
+                </a>
+            </li>
+            <li>{{ form(delete_form) }}</li>
+        </ul>
+    </section>
 {% endblock %}

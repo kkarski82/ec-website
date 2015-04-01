@@ -16,6 +16,8 @@ return array(
     'SensioLabs\\Security' => array($vendorDir . '/sensiolabs/security-checker'),
     'Psr\\Log\\' => array($vendorDir . '/psr/log'),
     'PHPParser' => array($vendorDir . '/nikic/php-parser/lib'),
+    'PHPExcel' => array($vendorDir . '/phpoffice/phpexcel/Classes'),
+    'Liuggio\\ExcelBundle' => array($vendorDir . '/liuggio/ExcelBundle'),
     'JMS\\TranslationBundle' => array($vendorDir . '/jms/translation-bundle'),
     'JMS\\I18nRoutingBundle' => array($vendorDir . '/jms/i18n-routing-bundle'),
     'Incenteev\\ParameterHandler' => array($vendorDir . '/incenteev/composer-parameter-handler'),

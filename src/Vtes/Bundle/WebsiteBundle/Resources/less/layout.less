@@ -76,6 +76,43 @@ a {
     max-height: 100%;
     float: right;
   }
+
+  table {
+    width: 80%;
+    font: 1rem "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #D3D3D3;
+    background: #555;
+    margin-left: auto;
+    margin-right: auto;
+    border-collapse: collapse;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+
+    th, td {
+      padding: 5px;
+      width: 6rem;
+      min-width: 6rem;
+      text-align: center;
+
+      &:nth-child(1) {
+        width: 2rem;
+        min-width: 2rem;
+      }
+    }
+
+    thead {
+      border-bottom: 1px solid #444;
+    }
+
+    tbody {
+      tr {
+        &:nth-child(2n+1) {
+          background: #777;
+        }
+      }
+    }
+  }
 }
 
 #navbar {

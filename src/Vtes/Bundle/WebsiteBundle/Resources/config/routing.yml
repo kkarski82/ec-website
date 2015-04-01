@@ -12,7 +12,7 @@ vtes_website_hotel:
 
 vtes_website_players:
     resource: "@VtesWebsiteBundle/Resources/config/routing/players.yml"
-    prefix: /players
+    prefix:   /players
 
 vtes_website_prizes:
      resource: "@VtesWebsiteBundle/Resources/config/routing/prizes.yml"

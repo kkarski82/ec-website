@@ -1,47 +1,50 @@
 {% extends 'VtesWebsiteBundle:Layouts:base.html.twig' %}
 
+{% block title %}{{ 'page.title.main' | trans }} - {{ 'registration.complete' | trans }}{% endblock %}
+
 {% block body -%}
-    <h1>{{ 'registration.complete' | trans }}</h1>
+    <section id="content">
+        <h1>{{ 'registration.complete' | trans }}</h1>
 
-    <table class="record_properties">
-        <tbody>
-        <tr>
-            <th>{{ 'players.email' | trans }}</th>
-            <td>{{ entity.username }}</td>
-        </tr>
-        <tr>
-            <th>VEKN</th>
-            <td>{{ entity.vekn }}</td>
-        </tr>
-        <tr>
-            <th>{{ 'players.name' | trans }}</th>
-            <td>{{ entity.name }}</td>
-        </tr>
-        <tr>
-            <th>{{ 'players.surname' | trans }}</th>
-            <td>{{ entity.surname }}</td>
-        </tr>
-        <tr>
-            <th>{{ 'players.country' | trans }}</th>
-            <td>{{ entity.country | country }}</td>
-        </tr>
-        <tr>
-            <th>{{ 'players.shirt' | trans }}</th>
-            <td>{{ entity.shirt }}</td>
-        </tr>
-        <tr>
-            <th>{{ 'players.days' | trans }}</th>
-            <td>{{ entity.days }}</td>
-        </tr>
-        <tr>
-            <th>{{ 'players.room' | trans }}</th>
-            <td>{{ entity.room }}</td>
-        </tr>
-        <tr>
-            <th>{{ 'players.roommate' | trans }}</th>
-            <td>{{ entity.roommate }}</td>
-        </tr>
-        </tbody>
-    </table>
-
+        <table class="record_properties">
+            <tbody>
+            <tr>
+                <th>{{ 'players.email' | trans }}</th>
+                <td>{{ entity.username }}</td>
+            </tr>
+            <tr>
+                <th>{{ 'players.veknShort' | trans }}</th>
+                <td>{{ entity.vekn }}</td>
+            </tr>
+            <tr>
+                <th>{{ 'players.name' | trans }}</th>
+                <td>{{ entity.name }}</td>
+            </tr>
+            <tr>
+                <th>{{ 'players.surname' | trans }}</th>
+                <td>{{ entity.surname }}</td>
+            </tr>
+            <tr>
+                <th>{{ 'players.country' | trans }}</th>
+                <td>{{ entity.country | country }}</td>
+            </tr>
+            <tr>
+                <th>{{ 'players.shirt' | trans }}</th>
+                <td>{{ entity.shirt }}</td>
+            </tr>
+            <tr>
+                <th>{{ 'players.days' | trans }}</th>
+                <td>{{ entity.days }}</td>
+            </tr>
+            <tr>
+                <th>{{ 'players.room' | trans }}</th>
+                <td>{{ entity.room }}</td>
+            </tr>
+            <tr>
+                <th>{{ 'players.roommate' | trans }}</th>
+                <td>{{ entity.roommate }}</td>
+            </tr>
+            </tbody>
+        </table>
+    </section>
 {% endblock %}

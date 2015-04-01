@@ -21,6 +21,13 @@ admin:
     user-creation: Tworzenie gracza
     user-edit: Edycja gracza
     user-list: Lista graczy
+    print-user-list: Drukuj listę graczy
+
+page:
+  title:
+    main: VTES EC 2015
+    date: 27-30 Sierpnia
+    location: Warszawa, Polska
 
 button:
     register: Rejestracja
@@ -33,8 +40,10 @@ links:
     program: Program
     registration: Rejestracja
     warsaw: Warszawa
+    players: Gracze
 
 players:
+    title: Gracze
     country: Kraj
     days: Dni
     email: E-mail
@@ -45,9 +54,11 @@ players:
     shirt: Rozmiar koszulki
     surname: Nazwisko
     vekn: VEKN (opcjonalnie)
+    registered: Zarejestrowani gracze
+    veknShort: VEKN
 
 registration:
-    title: Rejestracja gracza
+    title: Rejestracja
     complete: Rejestracja zakończona
 
 user:
@@ -58,3 +69,70 @@ user:
     form-room-single: Pokój jednoosobowy
     form-roommate-placeholder: Współlokator (pozostaw puste jeżeli nie dotyczy)
     form-shirt-placeholder: Rozmiar koszulki (wybierz)
+
+hotel:
+    title: Hotel
+    rooms: Pokoje
+    intro:
+      head: Mistrzostwa Europy w 2015 odbędą się w Plaza Hotel w Warszawie w terminie 27.08 – 30.08.2015
+      body: >
+            Jest to luksusowy 4 gwiazdkowy hotel w niedalekim sąsiedztwie
+            lotniska Okęcie, z dogodnym dojazdem do centrum Warszawy.
+            Hotel oferuje nowoczesny wystrój w komfortowo urządzonych
+            klimatyzowanych pokojach (minibar, Wi-Fi, TV sat, sejf).
+            Podczas turnieju do dyspozycji graczy zostaną oddane sale
+            konferencyjne oraz komfortowy bar na parterze hotelu.
+    desc: >
+          Dla graczy oraz gości Mistrzostw Europy Hotel Warsaw Plaza
+          przygotował specjalną ofertę:
+          pokoje w opcji pojedyńczy/podwójny w cenie 195pln/pokój w
+          ofercie ze śniadaniem (w formie bufetu).
+          Rezerwacji mozna dokonać rejestrując się na stronie mistrzostw w
+          zakładce „Rejestracja” – specjalna oferta cenowa dotyczy osób
+          zarejestrowanych na stronie mistrzostw.
+    info: Po szczegółowe informacje na temat hotelu zapraszamy na:
+    contact: W razie pytań prosimy o kontakt na rszewski [at] o2 [dot] pl
+    offer: >
+           Podczas mistrzostw przewidujemy również specjalną ofertę
+           związaną z obiadami/kolacjami – szczegóły ogłosimy w późniejszym
+           terminie.
+    directions: Wskazówki
+
+ec:
+  1: I spotykamy się znów...
+  2: >
+     4 lata upłynęły od ostatnich Mistrzostw Europy, które odbyły się w
+     Warszawie i nawet w najśmielszych myslach nie sądziliśmy, że w tak
+     niedługim okresie czasu przyjdzie znowu gościć nam graczy z całej
+     Europy (i nie tylko). W 2011 roku zorganizowaliśmy turniej, który
+     okazał się być dość sporym sukcesem zarówno frekwencyjnym jak i
+     organizacyjnym (nie chwalimy się - nas chwalono). Mimo włożonego
+     wysiłku i nieprzespanych nocy, bardzo szybko zapragnęliśmy „powtórki
+     z rozrywki” (cytując klasyczną polską audycję) i oto ona.
+     Mistrzostwa Europy 2015 w Polsce.
+  3: >
+     Zdajemy sobie sprawę, że w tych trudnych dla VtES’a czasach nie jest
+     łatwo nie tylko zorganizować ale przede wszystkim zebrać odpowiednią
+     ilość graczy – wielu z nas wspomina czasy, kiedy turnieje rangi
+     mistrzostw przyciągały prawie dwie setki osób.
+  4: >
+     Cóż, zyjemy w świecie marzeń, które należy w miarę możliwości
+     realizować; stąd nasza pierwsza myśl „dlaczego nie?”. Dlaczego nie
+     mielibyśmy zorganizować największego turnieju od lat? Dlaczego nie
+     moglibyśmy liczyć na frekwencje zahaczającą o magiczne 200 osób?
+     Dlaczego nie spróbujemy wyjść poza standardowe ramy turniejów i
+     przygotować coś ekstra? Coś ponad programowego i zaskakującego?
+     Tak stawiając sobie pytania, doszliśmy do wniosku, że warto
+     spróbować.
+  5: >
+     Ta strona ma Wam ułatwić podjęcie decyzji – przyjechać czy nie?
+     Tutaj dowiecie się wszystkiego na temat turnieju, kosztów, hotelu,
+     imprez, nagród itp. Informacje sukcesywnie będą pojawiać się jak
+     tylko potwierdzimy kolejne tematy.
+  6: >
+     Wierzymy, że wysiłki, które już podjęliśmy, i rzeczy, które
+     zamierzamy dla Was przygotować, sprawią, iż koniec sierpnia
+     postanowicie spędzić w gorącej Warszawie, grając w swoją ulubioną
+     grę w znakomitym towarzystwie przyjaciół i rywali. Tego Wam i sobie
+     życzymy.
+  7: Organizatorzy.

@@ -20,7 +20,7 @@ class UserType extends AbstractType
             ->add('vekn', 'number', array(
                 'label' => 'players.vekn',
                 'required' => false,
-                'empty_data' => null
+                'empty_data' => ''
             ))
             ->add('name', null, array(
                 'label' => 'players.name'
